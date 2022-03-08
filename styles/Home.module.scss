@@ -1,5 +1,13 @@
 .container {
   padding: 0 2rem;
+
+  p {
+    font-family: "Lato", sans-serif;
+  }
+
+  h1 {
+    font-family: "Lato", sans-serif;
+  }
 }
 
 .main {
@@ -19,6 +27,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
 }
 
 .footer a {
@@ -61,8 +70,8 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
 }
 
 .grid {

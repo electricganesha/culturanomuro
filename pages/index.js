@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
@@ -12,14 +12,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Image src="/acm.jpg" alt="Logo ACM" width={240} height={240}/>
+        <Image src="/acm.jpg" alt="Logo ACM" width={240} height={240} />
         <h3>
-          Em constru&ccedil;&atilde;o
+          EM CONSTRU&Ccedil;&Atilde;O
         </h3>
       </main>
 
       <footer className={styles.footer}>
-        <p style={{fontSize: "10px"}}>Todos os direitos reservados © Cultura no Muro</p>
+        <p>Todos os direitos reservados © Cultura no Muro</p>
       </footer>
     </div>
   )
