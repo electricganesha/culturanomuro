@@ -1,0 +1,16 @@
+.event {
+    text-transform: capitalize;
+    padding: 4px 0;
+
+    a {
+        background: black;
+        color: white;
+    }
+
+    &:hover {
+        a {
+            background: white;
+            color: black;
+        }
+    }
+}

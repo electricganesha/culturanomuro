@@ -1,0 +1,12 @@
+.list {
+    text-align: center;
+
+    &__item {
+        border-bottom: 1px dotted white;
+        padding: 4px 0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
