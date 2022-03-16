@@ -5,6 +5,7 @@ body {
   font-family: "Lato", sans-serif;
   background-color: black;
   color: white;
+  height: 100vh;
 }
 
 a {
@@ -41,4 +42,37 @@ h1 {
   @media (min-width: 768px) {
     min-height: 82vh;
   }
+}
+
+#__next {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slide-enter {
+  overflow-y: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+.slide-enter-active {
+  overflow-y: hidden;
+  opacity: 1;
+  height: 153px;
+  transition: all 500ms ease;
+}
+
+.slide-exit {
+  overflow-y: hidden;
+  opacity: 1;
+  height: 153px;
+}
+
+.slide-exit-active {
+  overflow-y: hidden;
+  opacity: 0;
+  height: 0;
+  transition: all 500ms ease;
 }

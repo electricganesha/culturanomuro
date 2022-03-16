@@ -1,56 +1,89 @@
 .navbar {
-    &__links {
-        display: none;
-        list-style: none;
-        font-family: "Lato", sans-serif;
+    &__burger {
+        margin: 24px 0 0 24px;
+        display: block;
 
         @media (min-width: 768px) {
-            display: block;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
+            display: none;
         }
     }
 
-    &__item {
-        transition: all 0.3s;
-        color: white;
-        background-color: black;
-        min-width: 120px;
-        text-align: center;
+    &__menu {
+        display: none;
 
-        a {
-            color: white;
-            transition: all 0.3s;
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+}
+
+.links {
+    list-style: none;
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+
+    @media (min-width: 768px) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.item {
+    transition: all 0.3s;
+    color: white;
+    background-color: black;
+    min-width: 120px;
+
+    a {
+        color: white;
+        transition: all 0.3s;
+
+        @media (min-width: 768px) {
             border-bottom: 1px solid white;
         }
+    }
 
-        &:hover {
-            background-color: white;
+    &:hover {
+        background-color: white;
+        color: black;
+        transition: all 0.3s;
+
+        a {
             color: black;
             transition: all 0.3s;
 
-            a {
-                color: black;
-                transition: all 0.3s;
+            @media (min-width: 768px) {
                 border-bottom: 1px solid black;
             }
         }
     }
 
-    &__icons {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
+    @media (min-width: 768px) {
+        text-align: center;
+    }
+}
 
-        a {
+.icons {
+    display: flex;
+    margin-top: 12px;
+    gap: 12px;
+
+    a {
+        transition: all 300ms;
+
+        &:hover {
             transition: all 300ms;
-
-            &:hover {
-                transition: all 300ms;
-                transform: scale(1.2);
-            }
+            transform: scale(1.2);
         }
+    }
+
+    @media (min-width: 768px) {
+        margin-top: 0;
+        justify-content: space-between;
     }
 }
