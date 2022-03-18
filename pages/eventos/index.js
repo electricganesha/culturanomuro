@@ -15,18 +15,23 @@ export default function Events({ nextEvents, previousEvents }) {
                 {nextEvents.length > 0
                     ? <EventList events={nextEvents} title="Pr&oacute;ximos Eventos:" />
 
-                    : null}
+                    : <p style={{ textAlign: 'center' }}>N&atilde;o temos eventos planeados nos pr&oacute;ximos tempos</p>
+                }
                 {previousEvents.length > 0
                     ? <EventList events={previousEvents} title="Eventos Anteriores:" />
-                    : null
+                    : <p style={{ textAlign: 'center' }}>N&atilde;o temos eventos passados para mostrar</p>
                 }
             </main>
         </div>
     )
 }
 
-Events.getInitialProps = async (ctx) => {
-    const res = await fetch('https://culturanomuro.vercel.app/api/events')
+Events.getInitialProps = async () => {
+    console.log(`fetching from ${process.env.NEXT_PUBLIC_HOST}/api/events`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/events`).catch(() => {
+        console.error('Error fetching events from API');
+    });
+
     const json = await res.json();
 
     const nextEvents = json.filter(evento => new Date(evento.start_time) > Date.now());

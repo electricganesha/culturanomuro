@@ -1,15 +1,29 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Navbar.module.scss'
 import Link from 'next/link'
 import Image from 'next/image';
 import Burger from '@animated-burgers/burger-squeeze'
 import '@animated-burgers/burger-squeeze/dist/styles.css'
 import { CSSTransition } from 'react-transition-group';
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
-
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const router = useRouter()
+
+    useEffect(() => {
+        const handleRouteChange = () => {
+            setIsMenuOpen(false);
+        }
+
+        router.events.on('routeChangeStart', handleRouteChange)
+
+        return () => {
+            router.events.off('routeChangeStart', handleRouteChange)
+        }
+    }, [router.events]);
 
     const menu = <ul className={styles.links}>
         <li className={styles.item}>

@@ -13,11 +13,9 @@ export default function Evento({ eventos }) {
             <main className="main">
                 <Image src="/acm.jpg" alt="Logo ACM" width={120} height={120} />
                 <h1 style={{
-                    maxWidth: 640,
                     textAlign: 'center'
                 }}>{evento.name}</h1>
                 <p style={{
-                    maxWidth: 640,
                     whiteSpace: 'pre-line',
                     textAlign: 'left'
                 }} dangerouslySetInnerHTML={{ __html: evento.description }} />
@@ -28,7 +26,10 @@ export default function Evento({ eventos }) {
 
 Evento.getInitialProps = async (ctx) => {
     const queryId = ctx.query.id;
-    const res = await fetch(`https://culturanomuro.vercel.app/api/events/${queryId}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/events/${queryId}`).catch(() => {
+        console.error('Error fetching events from API');
+    });
+
     const json = await res.json()
 
     return { eventos: json }

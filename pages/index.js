@@ -10,9 +10,6 @@ export default function Home() {
       </Head>
       <main className="main">
         <Image src="/acm.jpg" alt="Logo ACM" width={240} height={240} />
-        <h3>
-          EM CONSTRU&Ccedil;&Atilde;O
-        </h3>
       </main>
     </div>
   )
